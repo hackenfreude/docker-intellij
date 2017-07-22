@@ -1,6 +1,6 @@
-ARG OPENJDK_TAG=8u131-jdk
-
 FROM buildpack-deps:stretch-curl as downloader
+
+ARG OPENJDK_TAG=8u131-jdk
 
 ENV INTELLIJ_VERSION=2017.2
 
