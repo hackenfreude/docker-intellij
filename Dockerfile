@@ -1,12 +1,12 @@
-FROM buildpack-deps:stretch-curl as downloader
-
 ARG OPENJDK_TAG=8u131-jdk
 
-ENV INTELLIJ_VERSION=2017.2.2
+FROM buildpack-deps:stretch-curl as downloader
 
-RUN wget --no-verbose https://download.jetbrains.com/idea/ideaIC-${INTELLIJ_VERSION}.tar.gz.sha256
+ARG INTELLIJ_VERSION=2017.2.2
 
-RUN wget --no-verbose --show-progress --progress=dot:giga https://download.jetbrains.com/idea/ideaIC-${INTELLIJ_VERSION}.tar.gz
+ADD https://download.jetbrains.com/idea/ideaIC-${INTELLIJ_VERSION}.tar.gz.sha256 ideaIC-${INTELLIJ_VERSION}.tar.gz.sha256
+
+ADD https://download.jetbrains.com/idea/ideaIC-${INTELLIJ_VERSION}.tar.gz ideaIC-${INTELLIJ_VERSION}.tar.gz
 
 RUN sha256sum -c ideaIC-${INTELLIJ_VERSION}.tar.gz.sha256
 
