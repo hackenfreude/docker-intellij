@@ -15,7 +15,7 @@ RUN mkdir /opt/intellij && tar -C /opt/intellij --strip-components=1 -xvf /ideaI
 
 FROM openjdk:${OPENJDK_TAG} as intellij
 
-RUN apt-get --quiet update && apt-get --quiet --assume-yes install libgtk-3-0 libdbus-glib-1-2 libxt6 libcanberra-gtk-module libcanberra-gtk3-module
+RUN apt-get --quiet update && DEBIAN_FRONTEND=noninteractive apt-get --quiet --assume-yes install libgtk-3-0 libdbus-glib-1-2 libxt6 libcanberra-gtk-module libcanberra-gtk3-module
 
 COPY --from=downloader /opt/intellij /opt/intellij
 
