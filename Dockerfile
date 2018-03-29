@@ -1,4 +1,4 @@
-ARG OPENJDK_TAG=8u141-jdk
+ARG OPENJDK_TAG=8u162-jdk
 
 FROM buildpack-deps:stretch-curl as downloader
 
