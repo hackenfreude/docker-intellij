@@ -2,7 +2,7 @@ ARG OPENJDK_TAG=8u171-jdk
 
 FROM buildpack-deps:stretch-curl as downloader
 
-ARG INTELLIJ_VERSION=2018.1.3
+ARG INTELLIJ_VERSION=2018.1.4
 
 ADD https://download.jetbrains.com/idea/ideaIC-${INTELLIJ_VERSION}.tar.gz.sha256 ideaIC-${INTELLIJ_VERSION}.tar.gz.sha256
 
