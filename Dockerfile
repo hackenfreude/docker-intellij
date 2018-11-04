@@ -1,4 +1,4 @@
-ARG OPENJDK_TAG=8u171-jdk
+ARG OPENJDK_TAG=8u181-jdk-stretch
 
 FROM buildpack-deps:stretch-curl as downloader
 
@@ -20,3 +20,4 @@ RUN apt-get --quiet update && DEBIAN_FRONTEND=noninteractive apt-get --quiet --a
 COPY --from=downloader /opt/intellij /opt/intellij
 
 ENTRYPOINT ["/opt/intellij/bin/idea.sh"]
+
